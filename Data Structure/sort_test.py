@@ -1,4 +1,5 @@
 import timeit
+|
 
 
 def insertion_sort(array):

@@ -1,5 +1,17 @@
 import timeit
+import time
+import random
 
+
+def is_sorted(array):
+    if len(array) < 2:
+        return True
+
+    for i in range(1, len(array)):
+        if array[i - 1] > array[i]:
+            return False
+
+    return True
 
 def merge_sort(array):
     n = len(array)
@@ -42,7 +54,7 @@ def insertion_sort(array):
         current_val = array[index]
         current_pos = index
 
-    # element array[current_pos - 1] must be after current
+        # element array[current_pos - 1] must be after current
         while current_pos > 0 and array[current_pos - 1] > current_val:
             array[current_pos] = array[current_pos - 1]
             current_pos -= 1
@@ -63,7 +75,8 @@ def quick_sort(array):
 
 
 if __name__ == '__main__':
-    array = [9, 5, 1, 4, 3, 10, 11, 54, 90]
+    n = 100
+    array = [random.randint(0, 999999999) for _ in range(n)]
 
     # measure quick sort runtime
     start_time_quick = timeit.default_timer()
@@ -81,9 +94,4 @@ if __name__ == '__main__':
     start_time_merge = timeit.default_timer()
     merge_sort(array)
     terminate_time_merge = timeit.default_timer()
-    print("merge sort : 0-%f"
-          " sec" % (terminate_time_merge - start_time_merge))
-
-
-
-
+    print("merge sort : %f sec" % (terminate_time_merge - start_time_merge))

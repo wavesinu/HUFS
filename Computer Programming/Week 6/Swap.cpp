@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+/*swap function using call by reference*/
+void swap(int &a, int &b){
+    int temp;
+    temp = a;
+    a = b;
+    b = temp;
+}
+
+int main(){
+	int a, b;
+	cin >> a >> b;
+	swap(a, b);
+	
+	cout << "a : "<< a <<endl;
+	cout << "b : "<< b <<endl;
+
+	return 0;
+}
