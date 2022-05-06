@@ -1,22 +1,27 @@
 #include <iostream>
-
 using namespace std;
 
 int main()
 {
     int student_number;
     cin >> student_number;
-    int grade[student_number];
 
-    int score = 0;
-    for (int i = 0; i < sizeof(grade); i++)
+    int *grade = new int[student_number];
+    int score;
+
+    for (int i = 0; i < student_number; i++)
     {
-        cin >> grade[i];
+        cin >> score;
+        grade[i] = score;
     }
 
-    for (int i = 0; i < sizeof(grade); i++)
+    int sum = 0;
+    for (int i = 0; i < student_number; i++)
     {
-        cout << grade[i] << endl;
+        sum += grade[i];
     }
-    return 0;
+
+    cout << "학생들의 성적 평균은 " << sum / student_number << "점 입니다." << endl;
+
+    delete[] grade;
 }
