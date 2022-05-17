@@ -17,5 +17,15 @@ int main(){
 }
 
 int Add(int x ,int y){
-    
+    int AND = x & y;
+    int XOR = x ^ y;
+
+    while (AND)
+    {
+        int a = XOR;
+        int b = AND << 1;
+        AND = a & b;
+        XOR = a ^ b;
+    }
+    return XOR; 
 }
