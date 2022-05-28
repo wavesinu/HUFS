@@ -13,8 +13,7 @@ int main(){
 
     int index = 0;
     for (int i = 0; i < n; i++){
-        for (int j = 0; j < m; j++)
-        {
+        for (int j = 0; j < m; j++){
             matrix[i][j] = index;
             index++;
         }
@@ -26,5 +25,17 @@ int main(){
     int c, d;
     cin >> c >> d;
 
+    
+    int sum[n][m];
 
+    for (int i = a; i <= c; i++){
+        for (int j = b; j <= d; j++){
+            sum += matrix[i][j];
+        }
+    }
+
+        cout << sum << endl;
+
+
+    return 0;
 }
