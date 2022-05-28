@@ -7,13 +7,15 @@ int main(){
     int arr2[4] = {60, 50, 40, 30};
     int arr3[4] = {25, 20, 15, 10};
 
-    /*포인터 배열 선언*/
+    int *ptr[3] = {};
+    ptr[0] = arr1;
+    ptr[1] = arr2;
+    ptr[2] = arr3;
 
-    for (int i = 0; i < 3; i++)
-    {
+    for (int i = 0; i < 3; i++){
         for (int j = 0; j < 4; j++)
         {
-            cout << << " ";
+            cout << ptr[i][j] << " ";
         }
         cout << endl;
     }
